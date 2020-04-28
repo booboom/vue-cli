@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router/index.js'
 
 import * as filters from './utils/fiters'
+import './plugins/element.js'
 
 // Vue.config.productionTip = false
 

@@ -1,8 +1,8 @@
 
-const testApiRoot = 'http://localhost:28000/' // 测试环境
+const testApiRoot = 'http://localhost:28000' // 测试环境
 
-const mockApiRoot = 'http://localhost:28000/' // 本地mock地址
-const prodApiRoot = 'http://localhost:28000/' // 线上环境地址
+const mockApiRoot = 'http://localhost:28000' // 本地mock地址
+const prodApiRoot = 'http://localhost:28000' // 线上环境地址
 const ENV = process.env.NODE_ENV
 
 function getProxyObj () {
@@ -59,5 +59,12 @@ module.exports = {
     devServer: {
         port: 3308,
         proxy: getProxyObj()
+    },
+
+    pluginOptions: {
+      'style-resources-loader': {
+        preProcessor: 'less',
+        patterns: []
+      }
     }
 }

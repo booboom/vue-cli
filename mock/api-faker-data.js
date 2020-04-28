@@ -11,7 +11,7 @@ const resultData = function (list) {
 }
 
 const apiList = {
-    'api/people': resultData(_.times(100, function (n) {
+    'api/people': resultData(_.times(10, function (n) {
         return {
             id: n,
             name: faker.name.findName(),

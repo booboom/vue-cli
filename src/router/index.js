@@ -10,11 +10,11 @@ import HelloWorld from '../components/HelloWorld.vue'
 let routes = [
     {
         path: '/',
-        components: Home
+        component: Home
     },
     {
         path: '/helloWorld',
-        components: HelloWorld
+        component: HelloWorld
     }
 ]
 
