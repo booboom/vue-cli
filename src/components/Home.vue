@@ -1,6 +1,8 @@
 <template>
     <div class="content">
-        <div>Home</div>
+        <div class="header">
+            <div>Home</div>
+        </div>
         <el-card class="user-info-box" v-for="item in dataList" :key="item.id">
             <div class="user-info">
                 <img class="user-avatar" :src="item.avatar" alt="">
@@ -11,7 +13,6 @@
 </template>
 
 <script>
-import api from '../network/api'
 
 export default {
     name: 'home',
@@ -22,15 +23,19 @@ export default {
     },
 
     created () {
-        api.getPeople().then(res => {
+        this.get('api/people').then(res => {
             console.log(res)
-            this.dataList = res
-            console.log(this.dataList)
+            const { data } = res
+            this.dataList = data
         })
     }
 }
 </script>
 <style lang="less" scoped>
+    .header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
     .user-info-box {
         margin-bottom: 10px;
     }
